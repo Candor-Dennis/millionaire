@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Who wants to be a millionaire</title>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
@@ -13,70 +14,51 @@
 	<div class="container text-white">
 
 			<div class="m-5 p-5 text-center">
-				<h2>WHO WANTS TO BE A MILLIONAIRE</h2>
+				<h2></h2>
 			</div>
 
-			<div class="d-flex justify-content-between">
-				<h3>Questions</h3>
-				<h5>Score: <span>0</span></h5>
+			<div class="">
+				<button class=" btn btn-success w-100" id="start" onclick="startQuiz()">Start Game</button>
+
 			</div>
+
+
+			<div class="d-flex justify-content-between m-4 ">
+				<h3>Questions</h3>
+				<h5>Score: <span id="score">0</span></h5>
+			</div>
+
 
 			<div id="que1" class="m-5">
-				<h5>
-					1. What is my name?
+				<h5 id="question">
+					
 				</h5>
 
 				<div class="row m-5">
 					<div class="col-sm-6">
-						<button class="btn my-color"> A. Adaure</button>
+						<button class="btn my-color" id="answerA" onclick="checkAnswer()"></button>
 					</div>
 					<div class="col-sm-6">
-						<button class="btn my-color"> B. Cindy</button>
+						<button class="btn my-color" id="answerB" onclick="checkAnswer()"></button>
 					</div>
 				</div>
 				<!-- second answers -->
 				<div class="row m-5">
 					<div class="col-sm-6">
-						<button class="btn my-color"> C. Basil</button>
+						<button class="btn my-color" id="answerC" onclick="checkAnswer()"></button>
 					</div>
 					<div class="col-sm-6">
-						<button class="btn my-color"> D. Dennis</button>
+						<button class="btn my-color" id="answerD" onclick="checkAnswer()"></button>
 					</div>
 				</div>
 			</div>
-
-			<!-- question 2 -->
-			<div id="que2" class="m-5 d-none">
-				<h5>
-					1. What is my name?
-				</h5>
-
-				<div class="row m-5">
-					<div class="col-sm-6">
-						<button class="btn my-color"> A. Adaure</button>
-					</div>
-					<div class="col-sm-6">
-						<button class="btn my-color"> B. Cindy</button>
-					</div>
-				</div>
-				<!-- second answers -->
-				<div class="row m-5">
-					<div class="col-sm-6">
-						<button class="btn my-color"> C. Basil</button>
-					</div>
-					<div class="col-sm-6">
-						<button class="btn my-color"> D. Dennis</button>
-					</div>
-				</div>
-			</div>
-		
-	</div>
-
+	</div>	
 
 
 
 
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 </html>
