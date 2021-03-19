@@ -1,82 +1,63 @@
-'use strict'
+"use strict"
 
 
-
- let questionContainer = document.getElementById('question');
- let optionOne = document.getElementById('answerA');
- let optionTwo = document.getElementById('answerB');
- let optionThree = document.getElementById('answerC');
- let optionFour = document.getElementById('answerD');
- let score = document.getElementById('score')
- let startGame = document.getElementById('start');
- let getQuestion = 0;
-
-let myQuestions = [{
+let myQuestions = {
 
 		question1 : {
-			questionTitle:"What is my name?",
 
-			questionOptions : {
+				questionTitle:"What is my name?",
 				opt1: "Cindy",
 				opt2: "Candy",
 				opt3: "Adaure",
-				opt4:"Baby"
-			},
-			correct:"Adaure"
-		},
+				opt4:"Baby",
+			   correct:"Adaure"
+		 },
 
 		question2 : {
-			questionTitle:"When was the last Teen Hack held?",
 
-			questionOptions: {
+			questionTitle:"When was the last Teen Hack held?",
 				opt1: " A: 2003",
 				opt2: "B: 2019",
 				opt3: "C: 2012",
-				opt4:"D: Never"
-			},
-			correct: "C: 2012"
+				opt4:"D: Never",
+			   correct: "C: 2012"
 		},
 
 		question3 : {
-			questionTitle:"How many colors doe a rainbow have?",
-
-			questionOptions: {
+			questionTitle:"How many colors does a rainbow have?",
 				opt1: " A: 5",
 				opt2: "B: 2",
 				opt3: " C: 12",
-				opt4:"D: 7"
-			},
-			correct: "D: 7"
+				opt4:"D: 7",
+			    correct: "D: 7"
 		}
-	}];
- 	function startQuiz(){
+	};
 
-	 	for (let i = 0 ;  i < myQuestions.length ; i++) {
-
-	      questionContainer.innerHTML = myQuestions[i].question1.questionTitle;
-	      optionOne.innerHTML = myQuestions[i].question1.questionOptions.opt1;
-	      optionTwo.innerHTML = myQuestions[i].question1.questionOptions.opt2;
-	      optionThree.innerHTML = myQuestions[i].question1.questionOptions.opt3;
-	      optionFour.innerHTML = myQuestions[i].question1.questionOptions.opt4;
-	    }
-	    console.log(questionContainer);
- }
+	 let questionContainer = document.getElementById('question');
+	 let optionOne = document.getElementById('answerA');
+	 let optionTwo = document.getElementById('answerB');
+	 let optionThree = document.getElementById('answerC');
+	 let optionFour = document.getElementById('answerD');
+	 let score = document.getElementById('score')
+	 let startGame = document.getElementById('start');
 
 
- 	function checkAnswer(){
-	 	for (let i = 0 ;  i < myQuestions.length ; i++) {
+	 function startQuiz(){
+	 		const key = Object.keys(myQuestions);
+			const randomIndex = key[Math.floor(Math.random() * key.length)];
+			const question = myQuestions[randomIndex];
 
-	 		if (optionOne.innerText == myQuestions[i].question1.correct) {
-	 			alert('weldone')
-	 		} else if(optionTwo.innerText == myQuestions[i].question1.correct){
-	 			alert('weldone')
-	 		}else if(optionThree.innerText == myQuestions[i].question1.correct){
-	 			alert('weldone')
-	 		}else if(optionFour.innerText == myQuestions[i].question1.correct){
-	 			alert('weldone')
-	 		}else{
-	 			alert('you failed')
-	 		}
-	    }
-	    console.log(optionOne)
+			questionContainer.innerHTML = question.questionTitle;
+			optionOne.innerHTML = question.opt1;
+			optionTwo.innerHTML = question.opt2;
+	      	optionThree.innerHTML = question.opt3; 
+	      	optionFour.innerHTML = question.opt4;
+	      	let play = startGame.classList.add("d-none");
+	      	let newPlay = document.getElementById('show').classList.remove("d-none");
+	      	let showScore = document.getElementById('show2').classList.remove("d-none");
 	 }
+
+	 function checkAnswer(data, question){
+	 	console.log(question);
+	 }
+
