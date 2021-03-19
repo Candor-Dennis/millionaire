@@ -18,47 +18,57 @@
 			</div>
 
 			<div>
-				<button class=" btn btn-success w-100" id="start" onclick="startQuiz()">Start Game</button>
+				<button class=" btn btn-success w-100" id="showGame" onclick="document.getElementById('endGame').classList.remove('d-none'); this.classList.add('d-none')">Start Game</button>
 			</div>
 
-			<div>
-				<h5 id="show" class="d-none">Play To Win!!!!!!!!!!!!!!!!!!!!!</h5>
+			
+
+			<h3 id="result"></h3>
+
+			<div id="finals" class=" d-none text-center">
+				<h3>Did you do well?</h3>
+				<button class="btn btn-success" id="success" onclick="newSuccess()">YES</button>
+				<button class="btn btn-danger" id="danger" onclick="newDanger()">NO</button>
+
 			</div>
 
+			<div id="endGame" class="d-none">
 
-			<div class="text-right m-4" >
-				<!-- <h4 class="">Questions</h4> -->
-				<h5 class="d-none" id="show2">Score: <span id="score">0</span></h5>
-			</div>
+				<div>
+					<h5 id="show" class="d-none">Play To Win!!!!!!!!!!!!!!!!!!!!!</h5>
+				</div>
+				
+				<div id="que1" class="m-5">
+					<h5 id="question">
+						
+					</h5>
 
-
-			<div id="que1" class="m-5">
-				<h5 id="question">
-					
-				</h5>
-
-				<div class="row m-5">
-					<div class="col-sm-6">
-						<button class="btn my-color" id="answerA" onclick="checkAnswer(this.innerText, document,getElementById('question').childNodes[0].innerHTML)"></button>
+					<div class="row m-5">
+						<div class="col-sm-6">
+							<button class="btn my-color" id="answerA" onclick="checkAnswer('answerA')"></button>
+						</div>
+						<div class="col-sm-6">
+							<button class="btn my-color" id="answerB" onclick="checkAnswer('answerB')"></button>
+						</div>
 					</div>
-					<div class="col-sm-6">
-						<button class="btn my-color" id="answerB" onclick="checkAnswer(this.innerText)"></button>
+					<!-- second answers -->
+					<div class="row m-5">
+						<div class="col-sm-6">
+							<button class="btn my-color" id="answerC" onclick="checkAnswer('answerC')"></button>
+						</div>
+						<div class="col-sm-6">
+							<button class="btn my-color" id="answerD" onclick="checkAnswer('answerD')"></button>
+						</div>
 					</div>
 				</div>
-				<!-- second answers -->
-				<div class="row m-5">
-					<div class="col-sm-6">
-						<button class="btn my-color" id="answerC" onclick="checkAnswer(this.innerText)"></button>
-					</div>
-					<div class="col-sm-6">
-						<button class="btn my-color" id="answerD" onclick="checkAnswer(this.innerText)"></button>
-					</div>
+
+				<div class="">
+					<button class="btn btn-light mx-auto" onclick="startQuiz()">Next Question</button>
 				</div>
+
 			</div>
 
-			<div class="">
-				<button class="btn btn-light mx-auto" onclick="startQuiz()">Next Question</button>
-			</div>
+
 	</div>	
 
 
